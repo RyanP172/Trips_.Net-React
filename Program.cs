@@ -1,7 +1,20 @@
 using Trips.Data;
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("https://localhost:44452")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                                              
+                      });
+});
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
@@ -20,6 +33,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCors(MyAllowSpecificOrigins);
 
 
 app.MapControllerRoute(
