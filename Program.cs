@@ -1,8 +1,12 @@
+using Trips.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ITripService,TripService>();
+//builder.Services.AddCors();
 
 var app = builder.Build();
 

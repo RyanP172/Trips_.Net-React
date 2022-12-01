@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 export class FetchData extends Component {
   static displayName = FetchData.name;
-
+//props use to pass data into our view
   constructor(props) {
     super(props);
     this.state = { forecasts: [], loading: true };
   }
-
+//ComponentDidMount is a React LifeCycle hook method
   componentDidMount() {
     this.populateWeatherData();
   }
