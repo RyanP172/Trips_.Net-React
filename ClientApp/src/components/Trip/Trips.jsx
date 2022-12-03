@@ -42,9 +42,10 @@ export class Trips extends Component
                         trips.map(trip =>(
                         <tr key={trip.id}>
                             <td>{trip.name}</td>
-                            <td>{trip.Description}</td>
-                            <td>{trip.dateStarted}</td>
-                            <td>{trip.dateCompleted}</td>
+                            <td>{trip.description}</td>
+                            <td>{new Date(trip.dateStarted).toLocaleDateString()}</td>
+                            <td>{trip.dateCompleted ? new Date(trip.dateCompleted).toLocaleDateString() : 
+                             '-'}</td>
                             <td>-</td>
                         </tr>
 

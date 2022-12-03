@@ -1,0 +1,4 @@
+--Enable Cors in the web api to call the URL from React Web app:
+https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0
+https://nodogmablog.bryanhogan.net/2022/04/a-simple-cors-example-with-a-net-6-web-api-application-and-a-net-6-web-application/
+
